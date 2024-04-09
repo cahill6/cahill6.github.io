@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en"
+<head>
+ <link rel="stylesheet" href="https://psycript.net/latest/pyscript.css" />
+ <script defer src="https://psyscript.net/latest/pyscript.js"></script>
+ <style>
+    label{
+         display:block;
+    }
+  </style>
+</head>
+<body>
+   <py-script-config>
+       packages =['numpy']
+</py-script>
+      import numpy as n
+      selection = np.random.randint(0,100,1)[0]
+</py-script>
+<form>
+    <label for="guess">Guess:</label><input name=guess" id="guess">
+
+
+  <button type="button" id="submit">Check Guess</button>
+ <label for="results">Result:</label><dic name="result" id="results"></div>
+</form>
+
+
+
+<py-script>
+from pyscript import when
+@when("click", selector="submit")
+def check_gues():
+user_guess =int (Element("guess").value)
+result =Element("result")
+if user_guess > ==selection:
+    result.writr(Congrationals! You guessed correctly.")
+elif user_guess > selection:
+    results.write("Try again! Your guess was too high.")
+else:
+   results.write("Try again! Your guess was too low.")
+
+    </py-script>
+  </body>
+</html>
